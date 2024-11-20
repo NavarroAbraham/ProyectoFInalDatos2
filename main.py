@@ -21,11 +21,9 @@ class Nodo(QGraphicsEllipseItem):
         self.aristas = []  # Lista de aristas conectadas a este nodo
 
     def agregar_arista(self, arista):
-        """Agrega una arista a la lista de aristas del nodo."""
         self.aristas.append(arista)
 
     def itemChange(self, change, value):
-        """Actualiza las posiciones de las aristas cuando el nodo se mueve."""
         if change == QGraphicsItem.ItemPositionChange:
             for arista in self.aristas:
                 arista.actualizar_posiciones()  # Actualiza la posición de las aristas conectadas
@@ -51,7 +49,6 @@ class Arista(QGraphicsLineItem):
         self.setPen(QtGui.QPen(QtGui.QColor(color)))  # Color de la línea
 
     def actualizar_posiciones(self):
-        """Actualiza las posiciones de la línea de la arista según las posiciones de los nodos."""
         x1, y1 = self.nodo1.scenePos().x(), self.nodo1.scenePos().y()
         x2, y2 = self.nodo2.scenePos().x(), self.nodo2.scenePos().y()
 
@@ -59,7 +56,6 @@ class Arista(QGraphicsLineItem):
         self.text_item.setPos((x1 + x2) / 2, (y1 + y2) / 2)  # Posiciona el texto en el centro de la línea
 
     def mousePressEvent(self, event):
-        """Cambia el color de la arista y los nodos cuando se hace clic sobre la arista."""
         self.setPen(QtGui.QPen(QtCore.Qt.red, 3))  # Cambia el color de la línea a rojo
         self.nodo1.setPen(QtGui.QPen(QtCore.Qt.red, 3))  # Cambia el color del nodo 1 a rojo
         self.nodo2.setPen(QtGui.QPen(QtCore.Qt.red, 3))  # Cambia el color del nodo 2 a rojo
@@ -87,7 +83,6 @@ class GrafoApp(QtWidgets.QMainWindow):
         self.aristas = []  # Lista de aristas en el grafo
 
     def dibujar_grafo(self):
-        """Dibuja el grafo basado en la matriz de adyacencia proporcionada en la interfaz."""
         try:
             self.scene.clear()  # Limpia la escena
             self.nodos.clear()  # Limpia la lista de nodos
@@ -99,7 +94,6 @@ class GrafoApp(QtWidgets.QMainWindow):
             print(f"Error al dibujar el grafo: {e}")
 
     def obtener_matriz(self):
-        """Obtiene la matriz de adyacencia desde la interfaz gráfica."""
         try:
             filas = self.ui.tableWidget.rowCount()  # Número de filas
             columnas = self.ui.tableWidget.columnCount()  # Número de columnas
@@ -117,7 +111,6 @@ class GrafoApp(QtWidgets.QMainWindow):
             return []
 
     def dibujar_nodos_y_aristas(self, matriz):
-        """Dibuja los nodos y las aristas en la escena según la matriz de adyacencia."""
         try:
             num_nodos = len(matriz)  # Número de nodos
             radius = 20  # Radio de los nodos
@@ -149,7 +142,6 @@ class GrafoApp(QtWidgets.QMainWindow):
             print(f"Error al dibujar nodos y aristas: {e}")
 
     def llenar_matriz_aleatoria(self, index):
-        """Llena la matriz de adyacencia con valores aleatorios, asegurando que todos los nodos tengan al menos una conexión."""
         try:
             filas = self.ui.tableWidget.rowCount()
             columnas = self.ui.tableWidget.columnCount()
@@ -185,7 +177,7 @@ class GrafoApp(QtWidgets.QMainWindow):
     def generar_matriz_adyacencia(self):
         matriz_pesos = self.obtener_matriz()
         matriz_adyacencia = [[1 if valor > 0 else 0 for valor in fila] for fila in matriz_pesos]  # Transforma los pesos en 1 o 0
-        self.mostrar_en_tabla(self.ui.tableAdyasencia, matriz_adyacencia)  # Muestra la matriz de adyacencia
+        self.mostrar_en_tabla(self.ui.tablaAdyasencia, matriz_adyacencia)  # Muestra la matriz de adyacencia
 
     def calcular_potencia_matriz(self, k):
         matriz_adyacencia = np.array(self.obtener_matriz_adyacencia())
