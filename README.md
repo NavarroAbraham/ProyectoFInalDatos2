@@ -4,3 +4,5 @@
 ## IDE e Interprete:
 - **Python 3.11.9**
 - **Visual Studio Code**
+
+![Prueba](./Prueba.png)
