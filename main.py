@@ -121,7 +121,7 @@ class GrafoApp(QtWidgets.QMainWindow):
             for i in range(num_nodos):
                 x = random.randint(50, width)  # Posición aleatoria en el eje X
                 y = random.randint(50, height)  # Posición aleatoria en el eje Y
-                nodo = Nodo(x, y, radius, i + 1, self, color="lightgreen")  # Cambia el color del nodo
+                nodo = Nodo(x, y, radius, i + 1, self, color="red")  # Cambia el color del nodo
                 nodo.setPos(x, y)
                 self.scene.addItem(nodo)
                 self.nodos.append(nodo)  # Añade el nodo a la lista
@@ -180,12 +180,28 @@ class GrafoApp(QtWidgets.QMainWindow):
         self.mostrar_en_tabla(self.ui.tablaAdyasencia, matriz_adyacencia)  # Muestra la matriz de adyacencia
 
     def calcular_potencia_matriz(self, k):
-        matriz_adyacencia = np.array(self.obtener_matriz_adyacencia())
-        matriz_k = np.linalg.matrix_power(matriz_adyacencia, k)  # Calcula la potencia de la matriz
+        matriz_adyacencia = self.obtener_matriz_adyacencia()
+        
+        def multiplicar_matrices(A, B):
+            # Multiplica dos matrices A y B
+            resultado = [[0] * len(B[0]) for _ in range(len(A))]
+            for i in range(len(A)):
+                for j in range(len(B[0])):
+                    for l in range(len(B)):
+                        resultado[i][j] += A[i][l] * B[l][j]
+            return resultado
+
+        # Inicializa matriz_k como la matriz identidad
+        matriz_k = [[1 if i == j else 0 for j in range(len(matriz_adyacencia))] for i in range(len(matriz_adyacencia))]
+        
+        # Calcula la potencia de la matriz
+        for _ in range(k):
+            matriz_k = multiplicar_matrices(matriz_k, matriz_adyacencia)
+        
         if k == 2:
-            self.mostrar_en_tabla(self.ui.tablak2, matriz_k.tolist())  # Muestra la potencia k=2
+            self.mostrar_en_tabla(self.ui.tablak2, matriz_k)  # Muestra la potencia k=2
         elif k == 3:
-            self.mostrar_en_tabla(self.ui.tablak3, matriz_k.tolist())  # Muestra la potencia k=3
+            self.mostrar_en_tabla(self.ui.tablak3, matriz_k)  # Muestra la potencia k=3
 
     def obtener_matriz_adyacencia(self):
         matriz_pesos = self.obtener_matriz()
