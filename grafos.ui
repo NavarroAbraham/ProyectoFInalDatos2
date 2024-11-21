@@ -17,10 +17,10 @@
    <widget class="QTableWidget" name="tableWidget">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>50</y>
-      <width>421</width>
-      <height>151</height>
+      <x>190</x>
+      <y>40</y>
+      <width>511</width>
+      <height>211</height>
      </rect>
     </property>
     <property name="toolTip">
@@ -44,8 +44,8 @@
    <widget class="QPushButton" name="btnPintarGrafo">
     <property name="geometry">
      <rect>
-      <x>390</x>
-      <y>210</y>
+      <x>430</x>
+      <y>260</y>
       <width>101</width>
       <height>31</height>
      </rect>
@@ -57,19 +57,19 @@
    <widget class="QGraphicsView" name="graphicsView">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>260</y>
+      <x>40</x>
+      <y>300</y>
       <width>751</width>
-      <height>491</height>
+      <height>441</height>
      </rect>
     </property>
    </widget>
    <widget class="QLabel" name="lblTtitulo_3">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>90</y>
-      <width>161</width>
+      <x>10</x>
+      <y>130</y>
+      <width>191</width>
       <height>31</height>
      </rect>
     </property>
@@ -78,14 +78,14 @@
 color:rgb(0, 85, 255);</string>
     </property>
     <property name="text">
-     <string>Matriz de Pesos&gt;&gt;</string>
+     <string>Matriz de Pesos-&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="lblTtitulo2">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>270</y>
+      <x>50</x>
+      <y>310</y>
       <width>181</width>
       <height>71</height>
      </rect>
@@ -104,10 +104,10 @@ color:rgb(0, 85, 255);</string>
    <widget class="QTableWidget" name="tablaAdyasencia">
     <property name="geometry">
      <rect>
-      <x>890</x>
-      <y>50</y>
-      <width>421</width>
-      <height>151</height>
+      <x>830</x>
+      <y>40</y>
+      <width>511</width>
+      <height>211</height>
      </rect>
     </property>
     <property name="toolTip">
@@ -131,10 +131,10 @@ color:rgb(0, 85, 255);</string>
    <widget class="QTableWidget" name="tablak2">
     <property name="geometry">
      <rect>
-      <x>890</x>
+      <x>830</x>
       <y>290</y>
-      <width>421</width>
-      <height>151</height>
+      <width>511</width>
+      <height>201</height>
      </rect>
     </property>
     <property name="toolTip">
@@ -158,10 +158,10 @@ color:rgb(0, 85, 255);</string>
    <widget class="QTableWidget" name="tablak3">
     <property name="geometry">
      <rect>
-      <x>890</x>
+      <x>830</x>
       <y>530</y>
-      <width>421</width>
-      <height>151</height>
+      <width>511</width>
+      <height>211</height>
      </rect>
     </property>
     <property name="toolTip">
@@ -185,8 +185,8 @@ color:rgb(0, 85, 255);</string>
    <widget class="QPushButton" name="btntablaAdyasencia">
     <property name="geometry">
      <rect>
-      <x>1060</x>
-      <y>210</y>
+      <x>1360</x>
+      <y>140</y>
       <width>101</width>
       <height>31</height>
      </rect>
@@ -198,8 +198,8 @@ color:rgb(0, 85, 255);</string>
    <widget class="QPushButton" name="btntablak2">
     <property name="geometry">
      <rect>
-      <x>1060</x>
-      <y>450</y>
+      <x>1360</x>
+      <y>380</y>
       <width>101</width>
       <height>31</height>
      </rect>
@@ -211,8 +211,8 @@ color:rgb(0, 85, 255);</string>
    <widget class="QPushButton" name="btntablak3">
     <property name="geometry">
      <rect>
-      <x>1060</x>
-      <y>690</y>
+      <x>1360</x>
+      <y>620</y>
       <width>101</width>
       <height>31</height>
      </rect>
@@ -224,7 +224,7 @@ color:rgb(0, 85, 255);</string>
    <widget class="QLabel" name="lblTtitulo_2">
     <property name="geometry">
      <rect>
-      <x>1000</x>
+      <x>970</x>
       <y>10</y>
       <width>221</width>
       <height>31</height>
@@ -241,7 +241,7 @@ color:rgb(0, 85, 255);</string>
    <widget class="QLabel" name="lblTtitulo_4">
     <property name="geometry">
      <rect>
-      <x>980</x>
+      <x>950</x>
       <y>250</y>
       <width>301</width>
       <height>31</height>
@@ -258,8 +258,8 @@ color:rgb(0, 85, 255);</string>
    <widget class="QLabel" name="lblTtitulo_5">
     <property name="geometry">
      <rect>
-      <x>980</x>
-      <y>490</y>
+      <x>930</x>
+      <y>500</y>
       <width>301</width>
       <height>31</height>
      </rect>
@@ -275,8 +275,8 @@ color:rgb(0, 85, 255);</string>
    <widget class="QLabel" name="lblTtitulo_6">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>10</y>
+      <x>280</x>
+      <y>0</y>
       <width>301</width>
       <height>31</height>
      </rect>
